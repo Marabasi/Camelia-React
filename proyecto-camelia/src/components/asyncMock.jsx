@@ -1,3 +1,5 @@
+// import React, { useState, useEffect } from "react";
+
 const products  = [
     {
         id: '1',
@@ -26,12 +28,23 @@ const products  = [
         stock: 60,
         description: 'Descripcion de las velas'
     },
-]
-
-export const getProducts = () => {
+  ]
+  
+  export const getProducts = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(products)
         }, 500)
     })
-}
+  }
+  
+  export const getProductsById = (productId) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(products.find(prod => prod.id === productId))
+        }, 500)
+    })
+  }
+
+
+export default getProductsByCategory;
